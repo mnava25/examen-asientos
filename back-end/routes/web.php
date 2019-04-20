@@ -14,3 +14,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['namespace'=>'Asiento'], function() use ($router){
+    $router->post('/asiento',['uses' => 'AsientoController@guardar']);
+});
